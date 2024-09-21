@@ -1,0 +1,56 @@
+<div class="container mt-5 show-details-container" *ngIf="show">
+  <div class="row mb-4">
+    <div class="col-8">
+      <h2>
+         {{ show?.showName }}
+      </h2>
+    </div>
+    <!-- <div class="col-4 text-end">
+      <button class="btn btn-secondary" (click)="changeShowStatus()">
+        <i class="fas fa-sync-alt"></i> Change Show Status
+      </button>
+    </div> -->
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <p><strong><i class="fas fa-calendar-day"></i> Date:</strong> {{ show?.showDate | date: 'longDate' }}</p>
+      <p><strong><i class="fas fa-clock"></i> Time:</strong> {{ show?.showTime | date: 'shortTime' }}</p>
+    </div>
+    <div class="col-md-6">
+      <p><strong><i class="fas fa-hourglass-half"></i> Duration:</strong> {{ show?.durationMinutes }} minutes</p>
+      <p><strong><i class="fas fa-info-circle"></i> Description:</strong> {{ show?.description }}</p>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <p><strong><i class="fas fa-video"></i> Movie:</strong> {{ show?.movieName }}</p>
+    </div>
+    <div class="col-md-6">
+      <p><strong><i class="fas fa-tv"></i> Screen:</strong> {{ show?.screenName }}</p>
+      <p><strong><i class="fas fa-info"></i> Status:</strong> {{ show?.status }}</p>
+    </div>
+  </div>
+
+  <div class="ticket-types" *ngIf="show?.ticketTypeSeats?.length > 0">
+    <h3>Ticket Types</h3>
+
+    <div *ngFor="let ticket of show.ticketTypeSeats; let i = index" class="ticket-type">
+      <div class="row ticket-header align-items-center" (click)="toggleTicketDetails(i)">
+        <div class="col-md-9">
+          <p><strong>{{ ticket.ticketTypeName }}</strong> - Price: {{ ticket.price | currency:'INR':'symbol' }}</p>
+        </div>
+        <div class="col-md-3 text-end">
+          <i [ngClass]="{'fas fa-chevron-up': displayDetails[i], 'fas fa-chevron-down': !displayDetails[i]}"></i>
+        </div>
+      </div>
+      
+      <div [ngClass]="{'ticket-details': true, 'd-none': !displayDetails[i]}" class="ps-3">
+        <p>Total Seats: {{ ticket.totalSeats }}</p>
+        <p>Booked Seats: {{ ticket.bookedSeats }}</p>
+        <p>Available Seats: {{ ticket.availableSeats }}</p>
+      </div>
+    </div>
+  </div>
+</div>

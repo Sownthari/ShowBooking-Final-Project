@@ -1,0 +1,41 @@
+.container {
+    max-width: 900px;
+  }
+  
+  .card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: none;
+  }
+  
+  .text {
+    color: #366caa;
+  }
+  
+  i.fas.fa-user-circle {
+    font-size: 3rem;
+  }
+  
+  .btn-primary {
+    background-color: #284a6e;
+    border: none;
+    padding: 8px 16px;
+  }
+  
+  i.fas.fa-edit {
+    margin-right: 5px;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  h3 {
+    font-weight: bold;
+  }
+  
+  h5 {
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,53 @@
+.ticket-sales-trend-container {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .trend-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #343a40;
+  }
+  
+  .filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .filter-input {
+    margin-right: 20px;
+    width: 150px;
+  }
+  
+  .fetch-button {
+    margin-left: auto;
+  }
+  
+  .sales-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .sales-table thead {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .sales-table th,
+  .sales-table td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .sales-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  

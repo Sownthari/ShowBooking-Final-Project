@@ -1,0 +1,66 @@
+.admin-welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    height: 100vh;
+}
+
+.admin-image-container img {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+
+.admin-image-container img:hover {
+    transform: scale(1.05);
+}
+
+.admin-welcome-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #003366; /* Darker blue for professionalism */
+    margin-top: -50px;
+    letter-spacing: 1.5px;
+}
+
+.admin-welcome-text span.theatre-name {
+    color: #061524; /* Strong blue for the theatre name */
+    font-style: normal;
+}
+
+.admin-welcome-subtext {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: #182f49; /* Medium blue for a professional yet approachable tone */
+    margin-top: 10px;
+    opacity: 0.85;
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .admin-welcome-text {
+        font-size: 2rem;
+    }
+
+    .admin-welcome-subtext {
+        font-size: 1.1rem;
+    }
+
+    .admin-image-container img {
+        max-width: 100%;
+    }
+}

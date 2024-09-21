@@ -1,0 +1,50 @@
+.container {
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding around the container */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+/* User Icon */
+.fas.fa-user-circle {
+    color: #595d61; /* Blue color for the icon */
+}
+
+/* Button Styling */
+.btn {
+    padding: 10px 15px; /* Padding for buttons */
+    font-size: 1rem; /* Font size for buttons */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border: none; /* No border */
+}
+
+.btn-outline-primary {
+    border: 1px solid #007bff; /* Outline color */
+    color: #007bff; /* Outline text color */
+}
+
+.btn:hover {
+    background-color: #305070 ;
+    color: white;
+    border: none;
+}
+
+/* Booking List */
+.list-group-item {
+    background-color: #e9ecef; /* Light background for list items */
+    color: #343a40; /* Dark text color */
+}
+
+.list-group-item:hover {
+    background-color: #d5d5d5; /* Change background color on hover */
+}

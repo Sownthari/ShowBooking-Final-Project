@@ -1,0 +1,48 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .filter-section {
+    
+    border-radius: 8px;
+  }
+
+  .filter-group {
+    background-color: #cacaca;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  
+  .filter-group h5 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .movie-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .movie-item {
+    width: 200px;
+    margin: 15px;
+    text-align: center;
+  }
+  
+  .movie-poster {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .movie-title {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  
+  

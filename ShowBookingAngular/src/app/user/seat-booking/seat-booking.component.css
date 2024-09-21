@@ -1,0 +1,105 @@
+/* Container */
+.theatre-show-details {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.movie{
+  margin: 0;
+}
+
+/* Movie and Theatre Details */
+.theatre-show-details h2, 
+.theatre-show-details p {
+  color: #798086;
+  font-size: 15px;
+}
+
+/* Ticket Group Spacing */
+.ticket-group {
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.ticket-type {
+  border-bottom: 0.5px solid rgb(158, 158, 158);
+  padding-bottom: 5px;
+}
+
+/* Seat Grid Layout */
+.seat-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.seat-row {
+  margin: 4px;
+}
+
+.seat-button {
+  width: 30px;
+  height: 30px;
+  margin: 1px;
+  border: 1px solid #347536;
+  background-color: white;
+  border-radius: 5px;
+  color: #347536;
+  cursor: pointer;
+}
+
+.seat-button.booked-seat {
+  background-color: #bebebe;
+  color: #e4e7e4;
+  border: none;
+  cursor: not-allowed;
+}
+
+.seat-button.selected-seat {
+  background-color: green ;
+  color: white;
+  border: none;
+}
+
+/* Space between seats */
+.seat-gap {
+  display: inline-block;
+  width: 10px;
+}
+
+/* Total Price Section */
+.proceed-button {
+  width: 250px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.proceed-button:hover {
+  background-color: #004080;
+}
+
+/* Divider */
+.curved-divider {
+  margin: 20px 0;
+}
+
+.curved-divider img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Seat Grid Gaps */
+.seat-row {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Extra Padding for each 10th Seat */
+.seat-group .seat-gap {
+  margin-right: 20px;
+}

@@ -1,0 +1,53 @@
+<div class="payment-container container mt-5">
+  <div class="row">
+    <!-- Left Side: Seat Details -->
+    <div class="col-md-6 seat-details">
+      <h3>Seat Details</h3>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Movie Name:</strong> {{ paymentData.movieName }}</li>
+        <li class="list-group-item"><strong>Theatre:</strong> {{ paymentData.theatreName }}</li>
+        <li class="list-group-item"><strong>Date:</strong> {{ paymentData.showDate | date:'fullDate' }}</li>
+        <li class="list-group-item"><strong>Show Time:</strong> {{ paymentData.showTime }}</li>
+        <li class="list-group-item"><strong>Number of Seats:</strong> {{ paymentData.count }}</li>
+        <li class="list-group-item"><strong>Total Amount:</strong> Rs. {{ paymentData.totalAmount }}</li>
+      </ul>
+      
+    </div>
+
+    <!-- Right Side: Payment Form -->
+    <div class="col-md-6 payment-form">
+
+      <form (ngSubmit)="processPayment()" #paymentForm="ngForm">
+        <!-- Card Details Section -->
+        <div class="form-group mb-3">
+          <label for="name">Cardholder's Name</label>
+          <input type="text" id="name" class="form-control" required [(ngModel)]="paymentDetails.name" name="name" />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" class="form-control" required minlength="16" maxlength="16" [(ngModel)]="paymentDetails.cardNumber" name="cardNumber" />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="expiry">Expiry Date</label>
+          <input type="month" id="expiry" class="form-control" required [(ngModel)]="paymentDetails.expiry" name="expiry" />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="cvv">CVV</label>
+          <input type="password" id="cvv" class="form-control" required minlength="3" maxlength="3" [(ngModel)]="paymentDetails.cvv" name="cvv" />
+        </div>
+
+        <!-- UPI Section -->
+        <div class="form-group mb-3">
+          <label for="upiId">UPI ID (Optional)</label>
+          <input type="text" id="upiId" class="form-control" [(ngModel)]="paymentDetails.upiId" name="upiId" />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100" [disabled]="paymentForm.invalid">Pay Now</button>
+      </form>
+    </div>
+  </div>
+</div>

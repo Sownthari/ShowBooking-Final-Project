@@ -1,0 +1,45 @@
+
+header {
+    background-color: transparent; 
+}
+
+.bg-light-blue {
+    background-color: #747879;
+}
+
+.fas {
+    color: #2F4F6F; 
+}
+
+.btn-logout {
+    padding: 6px 12px; 
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.btn-logout:hover {
+    background-color: transparent; 
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer; 
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+nav {
+    background-color: #747879; /* Background color for the navbar */
+}
+
+.navbar-nav .nav-link {
+    color: #FFFFFF; /* White color for the links */
+    padding: 5px 10px; /* Add padding for better spacing */
+}
+
+
+
+

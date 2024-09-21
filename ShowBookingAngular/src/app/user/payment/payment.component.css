@@ -1,0 +1,56 @@
+/* Container */
+.payment-container {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Seat Details Section */
+  .seat-details {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .seat-details h3 {
+    color: #003366;
+  }
+  
+  .seat-details .list-group-item {
+    background-color: #f7f9fc;
+    border: none;
+    margin-bottom: 10px;
+  }
+  
+  
+  /* Payment Form Section */
+  .payment-form {
+
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .payment-form h3 {
+    color: #003366;
+  }
+  
+  .payment-form .form-group label {
+    color: #003366;
+    font-weight: bold;
+  }
+  
+  .payment-form .form-control {
+    border-radius: 5px;
+  }
+  
+  .payment-form button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .payment-form button:hover {
+    background-color: #004080;
+  }
+  

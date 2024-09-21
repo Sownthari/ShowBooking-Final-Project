@@ -1,0 +1,25 @@
+<form (ngSubmit)="createOrganizer()" class="organizer-form mt-4">
+  <div class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" [(ngModel)]="organizer.firstname" name="firstname" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" [(ngModel)]="organizer.lastname" name="lastname" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" [(ngModel)]="organizer.email" name="email" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" [(ngModel)]="organizer.phoneNumber" name="phone" class="form-control" required>
+  </div>
+
+  <div class="button-group text-end">
+    <button type="submit" class="btn btn-primary">Create Organizer</button>
+  </div>
+</form>

@@ -1,0 +1,44 @@
+.show-details-container {
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .show-details-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .ticket-type {
+    margin-bottom: 15px;
+  }
+  
+  .ticket-header {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ticket-header:hover {
+    background-color: #dce4f0;
+  }
+  
+  .ticket-details {
+    padding-top: 10px;
+    border-left: 2px solid #007bff;
+  }
+  
+  .d-none {
+    display: none;
+  }
+  
+  button {
+    margin-top: 20px;
+    background-color: #007bff;
+    border: none;
+  }
+  button:hover {
+    background-color: #007bff;
+    border: none;
+  }
+  

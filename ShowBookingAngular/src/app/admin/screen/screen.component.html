@@ -1,0 +1,36 @@
+<!-- screens.component.html -->
+<div class="screens-container">
+    <h2>Your Screens</h2>
+  
+    <button class="add-btn" (click)="addScreen()">Add Screen</button>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Screen Name</th>
+          <th>Seating Capacity</th>
+          <th>Screen Type</th>
+          <th>Ticket Types & Seat Info</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let screen of screens">
+          <td>{{ screen.screenName }}</td>
+          <td>{{ screen.screenCapacity }}</td>
+          <td>{{ screen.screenType }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let ticketType of screen.ticketTypes">
+                {{ ticketType.ticketTypeName }}: {{ ticketType.seatCount }} seats at {{ ticketType.price  | currency:'INR':'symbol'}}
+              </li>
+            </ul>
+          </td>
+          <td>
+            <button class="edit-btn" (click)="editScreen(screen.screenID)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

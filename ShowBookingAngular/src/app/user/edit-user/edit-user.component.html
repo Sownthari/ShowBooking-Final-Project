@@ -1,0 +1,39 @@
+<div class="container my-5">
+    <form (ngSubmit)="updateUserDetails()">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-center mb-4">Update Your Details</h5>
+          
+          <!-- First Name -->
+          <div class="form-group mb-3">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="userDetails.firstName" name="firstName" required>
+          </div>
+  
+          <!-- Last Name -->
+          <div class="form-group mb-3">
+            <label for="lastName">Last Name:</label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="userDetails.lastName" name="lastName" required>
+          </div>
+  
+          <!-- Email -->
+          <div class="form-group mb-3">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="userEmail" [(ngModel)]="userDetails.email" name="email" required>
+          </div>
+  
+          <!-- Phone Number -->
+          <div class="form-group mb-3">
+            <label for="phoneNumber">Phone:</label>
+            <input type="tel" class="form-control" id="userPhone" [(ngModel)]="userDetails.phoneNumber" name="phoneNumber" required>
+          </div>
+  
+          <!-- Update Button -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary w-100">Update Details</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  

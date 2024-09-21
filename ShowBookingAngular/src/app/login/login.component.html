@@ -1,0 +1,63 @@
+<div class="login-container">
+  <div class="slider-section">
+    <img src="assets/login-slider2.png" class="d-block" alt="Slide 2">
+  </div>
+
+  <div class="form-section">
+    <form class="login-form" (ngSubmit)="login()" #loginForm="ngForm">
+      <h4 class="welcome-title">Welcome to ShowSpot</h4>
+
+      <!-- Email Input Field with Validation -->
+      <label for="email">Email</label>
+      <input 
+        type="email" 
+        id="email" 
+        [(ngModel)]="user.email" 
+        name="email" 
+        required
+        #email="ngModel">
+      <div *ngIf="email.invalid && email.touched" class="text-danger">
+        <small *ngIf="email.errors?.['required']">Email is required.</small>
+        <small *ngIf="email.errors?.['email']">Enter a valid email address.</small>
+      </div>
+
+      <!-- Password Input Field with Custom Validation -->
+      <label for="password">Password</label>
+      <input 
+        type="password" 
+        id="password" 
+        [(ngModel)]="user.password" 
+        name="password" 
+        required
+        
+        #password="ngModel">
+      <div *ngIf="password.invalid && password.touched" class="text-danger">
+        <small *ngIf="password.errors?.['required']">Password is required.</small>
+        <small *ngIf="password.errors?.['pattern']">
+          Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one special character.
+        </small>
+      </div>
+
+      <!-- City Dropdown with Validation -->
+      <label for="city">City</label>
+      <select 
+        id="city" 
+        [(ngModel)]="selectedCity" 
+        name="city" 
+        required
+        #city="ngModel">
+        <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+      </select>
+      <div *ngIf="city.invalid && city.touched" class="text-danger">
+        <small *ngIf="city.errors?.['required']">City is required.</small>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+
+      <p class="register-link">
+        Don't have an account? <a routerLink="/register">Register here</a>
+      </p>
+    </form>
+  </div>
+</div>

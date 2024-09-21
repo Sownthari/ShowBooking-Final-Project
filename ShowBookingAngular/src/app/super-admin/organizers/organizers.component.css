@@ -1,0 +1,112 @@
+.custom-dropdown select {
+    width: 200px; /* Set the width of the dropdown */
+    height: 40px; /* Static height */
+    overflow-y: auto; /* Enable vertical scrolling if options exceed height */
+  }
+  
+  .custom-dropdown select option {
+    padding: 5px; /* Padding inside the dropdown */
+  }
+
+  .organizer-management {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .text-end {
+    text-align: right;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #1d334b;
+  }
+  
+  .table th, 
+  .table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f1f3f5;
+  }
+  
+  .table-dark {
+    background-color: #003366; /* Dark blue */
+    color: #ffffff;
+  }
+  
+  .custom-dropdown {
+    width: 100%;
+  }
+  
+  .form-select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+  }
+  
+  .btn {
+    padding: 5px 10px;
+    font-size: 0.875rem;
+  }
+
+  /* Disabled button styles */
+  .btn:disabled {
+    background-color: #d6d6d6;
+    border-color: #d6d6d6;
+    color: #7d7d7d;
+    cursor: not-allowed;
+  }
+
+  
+  .btn-primary {
+    background-color: #00509e;
+    border-color: #00509e;
+  }
+  
+  .btn-primary:hover {
+    background-color: #003f7f;
+  }
+  
+  .btn-outline-primary {
+    color: #00509e;
+    border-color: #00509e;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #00509e;
+    color: #ffffff;
+  }
+  
+  .btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-outline-success:hover {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .btn {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+    }
+  
+    .form-select {
+      padding: 4px;
+    }
+  }
+  
+  

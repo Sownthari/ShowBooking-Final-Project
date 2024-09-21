@@ -1,0 +1,91 @@
+<div class="register-container">
+    <div class="slider-section">
+      <img src="assets/login-slider2.png" class="d-block" alt="Registration Slide">
+    </div>
+  
+    <div class="form-section">
+      <form class="register-form" (ngSubmit)="register()" #registerForm="ngForm">
+        <h4 class="welcome-title">Welcome to ShowShot</h4>
+  
+        <!-- First Name -->
+        <label for="firstName">First Name</label>
+        <input 
+          type="text" 
+          id="firstName" 
+          [(ngModel)]="user.firstName" 
+          name="firstName" 
+          required
+          #firstName="ngModel">
+        <div *ngIf="firstName.invalid && firstName.touched" class="text-danger">
+          <small *ngIf="firstName.errors?.['required']">First Name is required.</small>
+        </div>
+  
+        <!-- Last Name -->
+        <label for="lastName">Last Name</label>
+        <input 
+          type="text" 
+          id="lastName" 
+          [(ngModel)]="user.lastName" 
+          name="lastName" 
+          required
+          #lastName="ngModel">
+        <div *ngIf="lastName.invalid && lastName.touched" class="text-danger">
+          <small *ngIf="lastName.errors?.['required']">Last Name is required.</small>
+        </div>
+  
+        <!-- Email -->
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          [(ngModel)]="user.email" 
+          name="email" 
+          required
+          #email="ngModel">
+        <div *ngIf="email.invalid && email.touched" class="text-danger">
+          <small *ngIf="email.errors?.['required']">Email is required.</small>
+          <small *ngIf="email.errors?.['email']">Enter a valid email address.</small>
+        </div>
+  
+        <!-- Password -->
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="user.passwordHash" 
+          name="password" 
+          required
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$"
+          #password="ngModel">
+        <div *ngIf="password.invalid && password.touched" class="text-danger">
+          <small *ngIf="password.errors?.['required']">Password is required.</small>
+          <small *ngIf="password.errors?.['pattern']">
+            Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one special character.
+          </small>
+        </div>
+  
+        <!-- Contact Number -->
+        <label for="contact">Contact Number</label>
+        <input 
+          type="tel" 
+          id="contact" 
+          [(ngModel)]="user.phoneNumber" 
+          name="phoneNumber" 
+          required
+          pattern="^[0-9]{10}$"   
+          #phoneNumber="ngModel">
+        <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="text-danger">
+          <small *ngIf="phoneNumber.errors?.['required']">Contact Number is required.</small>
+          <small *ngIf="phoneNumber.errors?.['pattern']">Enter a valid 10-digit contact number.</small>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  
+        <p class="login-link">
+          Already have an account? <a routerLink="/login">Login here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+  

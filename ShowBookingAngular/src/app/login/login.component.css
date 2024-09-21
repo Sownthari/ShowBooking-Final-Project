@@ -1,0 +1,87 @@
+/* Login Page Styling */
+.login-container {
+    height: 100vh;
+    display: flex;
+    align-items: stretch; /* Allow items to stretch equally */
+}
+
+.slider-section,
+.form-section {
+    flex: 1; /* Allow both sections to take equal space */
+    display: flex;
+    align-items: center;
+}
+
+.slider-section {
+    justify-content: right;
+}
+
+
+.slider-section img {
+    width: 65%; /* Make sure the image covers the entire width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100vh; /* Set maximum height */
+    object-fit: cover; /* Ensure image covers the space without distortion */
+}
+
+.form-section {
+    background-color: #fff; /* White background for the form */
+    padding-right: 100px;
+    justify-content: left;
+}
+
+.form-section h4{
+    padding-bottom: 10px;
+    color: #15212e;
+}
+
+.login-form {
+    width: 100%;
+    padding: 10px;
+    max-width: 400px;
+}
+
+.login-form label {
+    color: #2F4F6F;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.login-form input,
+.login-form select {
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #2F4F6F;
+    outline: none;
+}
+
+.login-form button {
+    background-color: #7baae0;
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.login-form button:hover {
+    background-color: #305070;
+}
+
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #2F4F6F; /* Color matching the other text */
+}
+
+.register-link a {
+    color: #7baae0; /* Color of the link */
+    text-decoration: none; /* Remove underline */
+}
+
+.register-link a:hover {
+    text-decoration: underline; /* Underline on hover for better visibility */
+}
+

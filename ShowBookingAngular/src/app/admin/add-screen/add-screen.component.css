@@ -1,0 +1,94 @@
+/* General Container Styling */
+.add-screen-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+}
+
+.add-screen-container h2, .add-screen-container h3 {
+    color: #2F4F6F;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.add-screen-container h3 {
+    color: #375a7f;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+label {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Flexbox for Inputs in the Same Row */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-row div {
+    flex: 1;
+    min-width: 200px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styling */
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+.remove-button{
+    width: 100px !important;
+    height: 40px !important;
+    align-self: flex-end;
+    background-color: #e94454;
+}
+
+.add-button{
+    background-color: #464c83;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+}

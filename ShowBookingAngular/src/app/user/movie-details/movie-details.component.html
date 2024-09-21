@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <div class="row">
+    <!-- Movie Image (1/4 of the width) -->
+    <div class="col-md-3">
+      <img [src]="'assets/Images/' + movie.image" alt="{{ movie.movieName }}" class="img-fluid rounded shadow-sm">
+    </div>
+
+    <!-- Movie Details (3/4 of the width) -->
+    <div class="col-md-9">
+      <div class="card">
+        <div class="card-body">
+          <!-- Book Tickets Button -->
+          
+          <h3 class="card-title">{{ movie.movieName }}</h3>
+          <p class="card-text"><strong>Genre:</strong> {{ movie.genre }}</p>
+          <p class="card-text"><strong>Duration:</strong> {{ movie.durationMinutes }} minutes</p>
+          <p class="card-text"><strong>Release Date:</strong> {{ movie.releaseDate | date: 'longDate' }}</p>
+          <!-- Screen Types -->
+          <p *ngIf="movie?.screenTypes?.length">
+            <strong>Available in: </strong> {{ movie.screenTypes.join(', ') }}
+          </p>
+        </div>
+        <div class="d-flex justify-content-start mb-3">
+          <button class="btn btn-primary mx-3" (click)="bookTickets(movie.movieID)">Book Tickets</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4>About the movie</h4>
+  <p class="card-text">{{ movie.description }}</p>
+</div>

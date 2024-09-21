@@ -1,0 +1,40 @@
+<div class="movie-list">
+
+  <!-- Add Movie Button -->
+  <div class="add-movie-container">
+    <button class="btn btn-add" (click)="addMovie()">
+      <i class="fas fa-plus"></i> Add Movie
+    </button>
+  </div>
+
+  <!-- Movie Table -->
+  <table class="table">
+    <thead class="table table-dark">
+      <tr>
+        <th>Movie Image</th>
+        <th>Movie Name</th>
+        <th>Genre</th>
+        <th>Release Date</th>
+        <th>Language</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies">
+        <td>
+          <img [src]="'assets/Images/' + movie.image" alt="{{ movie.movieName }}" class="img-thumbnail">
+        </td>
+        <td>{{ movie.movieName }}</td>
+        <td>{{ movie.genre }}</td>
+        <td>{{ movie.releaseDate | date }}</td>
+        <td>{{ movie.language }}</td>
+        <td>{{ convertDuration(movie.durationMinutes) }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Message if no movies are available -->
+  <div *ngIf="movies.length === 0" class="no-movies">
+    <p>No movies available.</p>
+  </div>
+</div>

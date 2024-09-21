@@ -1,0 +1,61 @@
+<div class="container mt-5 tab-container">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a 
+        class="nav-link" 
+        [class.active]="isActiveTab('active')" 
+        (click)="selectTab('active')">
+        <i class="fas fa-film"></i> Active Movies
+      </a>
+    </li>
+    <li class="nav-item">
+      <a 
+        class="nav-link" 
+        [class.active]="isActiveTab('inactive')" 
+        (click)="selectTab('inactive')">
+        <i class="fas fa-stop-circle"></i> Inactive Movies
+      </a>
+    </li>
+    <li class="nav-item">
+      <a 
+        class="nav-link" 
+        [class.active]="isActiveTab('request')" 
+        (click)="selectTab('request')">
+        <i class="fas fa-envelope"></i> Movie Requests
+      </a>
+    </li>
+  </ul>
+
+  <div class="tab-content p-4">
+    <!-- Active Movies Tab -->
+    <div *ngIf="selectedTab === 'active'">
+      <h3 class="tab-title">Active Movies</h3>
+      <ul class="list-group">
+        <li *ngFor="let movie of activeMovies" class="list-group-item d-flex justify-content-between align-items-center">
+          {{ movie.movieName }}
+          <button class="btn btn-sm btn-danger" (click)="makeInactive(movie)">
+            <i class="fas fa-times"></i> Make Inactive
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Inactive Movies Tab -->
+    <div *ngIf="selectedTab === 'inactive'">
+      <h3 class="tab-title">Inactive Movies</h3>
+      <ul class="list-group">
+        <li *ngFor="let movie of inactiveMovies" class="list-group-item">
+          {{ movie.movieName }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Movie Requests Tab -->
+    <div *ngIf="selectedTab === 'request'">
+      <h3 class="tab-title">Movie Request Details</h3>
+      <p>If you have a movie request, please send an email to:</p>
+      <p><strong>showspot.booking&#64;gmail.com</strong></p>
+      <p>We will review your request and get back to you as soon as possible.</p>
+    </div>
+  </div>
+</div>

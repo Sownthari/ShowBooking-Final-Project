@@ -1,0 +1,91 @@
+.booking-history-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #003366; /* Dark Blue */
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+  
+  .booking-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #e6f2ff 40%, #568ab9); /* Light Blue Gradient */
+    border: 2px solid #0074cc;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .booking-card::before, 
+  .booking-card::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .booking-card::before {
+    top: -20px;
+    left: -20px;
+  }
+  
+  .booking-card::after {
+    bottom: -20px;
+    right: -20px;
+  }
+  
+  .card-left, .card-right {
+    width: 48%;
+  }
+  
+  .card-left {
+    padding-right: 10px;
+    border-right: 2px dashed #0074cc; /* Dashed line simulating ticket perforation */
+  }
+  
+  .card-right {
+    padding-left: 10px;
+  }
+  
+  .booking-card h2 {
+    color: #00509e;
+    margin-top: 0;
+    font-size: 1.8em;
+  }
+  
+  .booking-card p {
+    margin: 10px 0;
+    color: #003366;
+    font-size: 1em;
+  }
+  
+  .booking-card strong {
+    color: #00509e;
+  }
+  
+  .icon {
+    font-size: 1.2em;
+    margin-right: 5px;
+  }
+  
+  .booking-card p span.icon {
+    vertical-align: middle;
+  }
+  
+  .booking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  }
+  

@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="movies-section">
+      <h3>Top Performing Movies</h3>
+  
+      <!-- Filters -->
+      <div class="filters">
+        <label>Start Date:</label>
+        <input type="date" [(ngModel)]="startDate" class="input-field">
+  
+        <label>End Date:</label>
+        <input type="date" [(ngModel)]="endDate" class="input-field">
+  
+        <label>Genre:</label>
+        <input type="text" [(ngModel)]="genre" class="input-field">
+  
+        <button class="filter-button" (click)="fetchTopMovies()">Filter</button>
+      </div>
+  
+      <!-- Table to display movies -->
+      <div class="table-container">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Movie Name</th>
+              <th>Total Tickets Sold</th>
+              <th>Total Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let movie of movies">
+              <td>{{ movie.movieName }}</td>
+              <td>{{ movie.totalTicketsSold }}</td>
+              <td>{{ movie.totalRevenue | currency }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <div class="theatres-section">
+      <h3>Revenue by Theatre</h3>
+  
+      <!-- Filters -->
+      <div class="filters">
+        <label>Start Date:</label>
+        <input type="date" [(ngModel)]="startDate1" class="input-field">
+  
+        <label>End Date:</label>
+        <input type="date" [(ngModel)]="endDate1" class="input-field">
+  
+        <label>City:</label>
+        <input type="text" [(ngModel)]="city" class="input-field">
+  
+        <button class="filter-button" (click)="fetchRevenueByTheatre()">Filter</button>
+      </div>
+  
+      <!-- Table to display theatres -->
+      <div class="table-container">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Theatre Name</th>
+              <th>City</th>
+              <th>Total Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let theatre of theatres">
+              <td>{{ theatre.theatreName }}</td>
+              <td>{{ theatre.city }}</td>
+              <td>{{ theatre.totalRevenue | currency }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

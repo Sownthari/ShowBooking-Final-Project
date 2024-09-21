@@ -1,0 +1,82 @@
+.movie-list {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h2 {
+    color: #00509e;
+    margin-bottom: 20px;
+  }
+
+  .add-movie-container {
+    margin-bottom: 20px;
+    text-align: right; /* Align button to the right */
+  }
+  
+  .btn-add {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Center icon vertically */
+    transition: background-color 0.2s;
+  }
+  
+  .btn-add i {
+    margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .btn-add:hover {
+    background-color: #0056b3;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .table th {
+    background-color: #19212b;
+    color: white;
+  }
+  
+  .img-thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .btn-info {
+    background-color: #617fa0;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-info:hover {
+    background-color: #0056b3;
+  }
+  
+  .no-movies {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+  }
+  

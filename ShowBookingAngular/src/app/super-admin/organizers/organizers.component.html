@@ -1,0 +1,56 @@
+<div class="organizer-management">
+  <!-- Add button to create a new organizer -->
+  <div class="text-end mb-4">
+    <button class="btn btn-primary" (click)="createNewOrganizer()">
+      <i class="fas fa-plus-circle"></i> Create New Organizer
+    </button>
+  </div>
+
+  <!-- User table with Add Theatre, Movie dropdown, and Add Movie button -->
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Add Theatre</th>
+        <th>Movies (Not Mapped)</th>
+        <th>Add Movie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.firstName }} {{user.lastName}}</td>
+        <td>{{ user.email }}</td>
+
+        <!-- Add Theatre Button -->
+        <td>
+          <button 
+            class="btn btn-sm btn-outline-primary" 
+            [disabled]="user.hasTheatre" 
+            (click)="addTheatre(user)">
+            <i class="fas fa-plus"></i> Add Theatre
+          </button>
+        </td>
+
+        <!-- Dropdown for Movies not yet mapped with static size -->
+        <td>
+          <div class="custom-dropdown">
+            <select class="form-select" [(ngModel)]="user.selectedMovie" [disabled]="!user.hasTheatre">
+              <option *ngFor="let movie of user.moviesNotMapped" [value]="movie.movieID">{{ movie.movieName }}</option>
+            </select>
+          </div>
+        </td>
+
+        <!-- Add Movie Button -->
+        <td>
+          <button 
+            class="btn btn-sm btn-outline-success" 
+            [disabled]="!user.hasTheatre || !user.selectedMovie" 
+            (click)="addMovie(user)">
+            Add Movie
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

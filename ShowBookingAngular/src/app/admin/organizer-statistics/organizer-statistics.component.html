@@ -1,0 +1,40 @@
+<div class="ticket-sales-trend-container">
+  <h3 class="trend-title">Ticket Sales Trend</h3>
+
+  <!-- Filters -->
+  <div class="filter-section mb-4">
+    <label for="period" class="filter-label">Period:</label>
+    <select id="period" class="form-control filter-input" [(ngModel)]="period">
+      <option value="daily">Daily</option>
+      <option value="monthly">Monthly</option>
+    </select>
+
+    <button class="btn btn-primary fetch-button" (click)="fetchTicketSalesTrend()">Fetch Sales Trend</button>
+  </div>
+
+  <!-- Table to display sales trend -->
+  <table class="table table-bordered table-striped sales-table">
+    <thead>
+      <tr>
+        <th *ngIf="period === 'daily'">Date</th>
+        <th *ngIf="period === 'weekly'">Year</th>
+        <th *ngIf="period === 'weekly'">Week</th>
+        <th *ngIf="period === 'monthly'">Year</th>
+        <th *ngIf="period === 'monthly'">Month</th>
+        <th>Tickets Sold</th>
+        <th>Total Revenue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of salesData">
+        <td *ngIf="period === 'daily'">{{ data.date | date }}</td>
+        <td *ngIf="period === 'weekly'">{{ data.year }}</td>
+        <td *ngIf="period === 'weekly'">{{ data.week }}</td>
+        <td *ngIf="period === 'monthly'">{{ data.year }}</td>
+        <td *ngIf="period === 'monthly'">{{ data.month }}</td>
+        <td>{{ data.ticketsSold }}</td>
+        <td>{{ data.totalRevenue |currency:'INR':'symbol'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

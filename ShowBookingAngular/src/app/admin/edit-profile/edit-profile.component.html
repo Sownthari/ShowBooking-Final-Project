@@ -1,0 +1,71 @@
+<div class="container mt-5">
+  <div class="card shadow-sm p-4">
+    <h3 class="text mb-4">Edit Details</h3>
+
+    <!-- Admin Details -->
+    <form (ngSubmit)="saveDetails()">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="text">Admin Details</h5>
+
+          <div class="form-group mb-3">
+            <label for="firstName" class="form-label">First Name:</label>
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="adminDetails.firstName" name="firstName" required>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="lastName" class="form-label">Last Name:</label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="adminDetails.lastName" name="lastName" required>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="adminEmail" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="adminEmail" [(ngModel)]="adminDetails.email" name="email" required>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="adminPhone" class="form-label">Phone:</label>
+            <input type="tel" class="form-control" id="adminPhone" [(ngModel)]="adminDetails.phoneNumber" name="phoneNumber" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Theatre Details -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="text">Theatre Details</h5>
+
+          <div class="form-group mb-3">
+            <label for="theatreName" class="form-label">Theatre Name:</label>
+            <input type="text" class="form-control" id="theatreName" [(ngModel)]="theatreDetails.theatreName" name="theatreName" required>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="address" class="form-label">Address:</label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="theatreDetails.theatreAddress" name="theatreAddress" required>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="city" class="form-label">City:</label>
+            <input type="text" class="form-control" id="city" [(ngModel)]="theatreDetails.city" name="city" required>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="theatreState" class="form-label">State:</label>
+            <input type="text" class="form-control" id="theatreState" [(ngModel)]="theatreDetails.state" name="state" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons: Save and Cancel -->
+      <div class="text-end">
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-save"></i> Save
+        </button>
+        <button type="button" class="btn btn-secondary ms-2 px-4 py-2" (click)="cancelEdit()">
+          <i class="fas fa-times"></i> Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

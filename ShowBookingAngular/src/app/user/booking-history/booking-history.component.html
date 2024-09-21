@@ -1,0 +1,17 @@
+<div class="booking-history-container">
+    <h1>Your Bookings</h1>
+  
+    <div *ngFor="let booking of bookings" class="booking-card">
+      <div class="card-left">
+        <h2>{{ booking.movieName }}</h2>
+        <p><strong>Theatre:</strong> {{ booking.theatreName }}</p>
+        <p><strong>Show Date:</strong> {{ formatDate(booking.showDate) }}</p>
+        <p><strong>Show Time:</strong> {{ formatTime(booking.showTime) }}</p>
+      </div>
+      <div class="card-right">
+        <p><span class="icon">🎟️</span> Seats: {{ booking.seatNumbers.length ? booking.seatNumbers.join(', ') : 'No seats selected' }}</p>
+        <p><span class="icon">💵</span> Price: {{ booking.totalPrice.toFixed(2) | currency:'INR':'symbol' }}</p>
+      </div>
+    </div>
+  </div>
+  

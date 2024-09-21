@@ -1,0 +1,48 @@
+<div class="theatre-show-details container-fluid">
+  <!-- Movie and Theatre Name -->
+  <p class="movie"><strong>{{ show.movieName }}-{{screenType}}</strong></p>
+  <div>
+    <span>{{ show.theatreName }} | {{ show.showDate | date:'fullDate' }} |  {{ show.showTime }}</span>
+  </div>
+  <!-- Show Date and Time -->
+  
+
+  <!-- Curved Divider with Image -->
+  <div class="curved-divider my-4 text-center">
+    <img src="assets/cinema-screen1.png" width="300px" alt="Cinema Screen">
+    <p [ngStyle]="{'font-size': '13px','margin-top':'10px'}">All eyes this way please!</p>
+  </div>
+
+  <!-- Loop through each ticket type and display seating layout -->
+  <div *ngFor="let seatGroup of show.groupedShowSeats" class="ticket-group mb-1">
+    <p class="ticket-type">{{ seatGroup.ticketTypeName }} - {{ seatGroup.ticketTypePrice | currency:'INR':'symbol' }}</p>
+
+    <!-- Seat Grid for the ticket type -->
+    <div class="seat-group text-center">
+      <div class="seat-row mb-3" *ngFor="let seat of seatGroup.seats; let i = index">
+        <button 
+          class="seat-button" 
+          [ngClass]="{'selected-seat': selectedSeats.includes(seat), 'booked-seat': seat.isBooked}"
+          (click)="toggleSeatSelection(seat)"
+          [disabled]="seat.isBooked">
+          {{ seat.seatColumn }}
+        </button>
+
+        <!-- Add a gap after every 10 seats in a row -->
+        <ng-container *ngIf="(i + 1) % 15 === 0">
+          <span class="seat-gap"></span>
+        </ng-container>
+
+        <!-- Break row after 20 seats -->
+        <ng-container *ngIf="(i + 1) % 30 === 0">
+          <br />
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <!-- Total Price and Proceed to Payment -->
+  <div class="text-center">
+    <button class="proceed-button btn btn-primary" (click)="goToPayment()">Pay {{ totalPrice | currency : 'INR' : 'symbol' }} </button>
+  </div>
+</div>

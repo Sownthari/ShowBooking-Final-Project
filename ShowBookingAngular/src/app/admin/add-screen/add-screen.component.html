@@ -1,0 +1,64 @@
+<div class="add-screen-container">
+  <ng-container *ngIf="screenName!=''">
+    <h2 class="mt-2">Edit Screen</h2>
+  </ng-container>
+  <ng-container *ngIf="screenName==''">
+    <h2 class="mt-2">Add Screen</h2>
+  </ng-container>
+  <form (ngSubmit)="submitForm()">
+    <label for="screenName"><i class="fas fa-tv"></i> Screen Name:</label>
+    <input type="text" id="screenName" [(ngModel)]="screenName" name="screenName" required>
+
+    <label for="seatingCapacity"><i class="fas fa-users"></i> Seating Capacity:</label>
+    <input type="number" id="seatingCapacity" [(ngModel)]="seatingCapacity" name="seatingCapacity" required>
+
+    <label for="screenType"><i class="fas fa-film"></i> Screen Type:</label>
+    <input type="text" id="screenType" [(ngModel)]="screenType" name="screenType">
+
+    <h3>Ticket Types</h3>
+    <div *ngFor="let ticketType of ticketTypes; let i = index" class="form-row">
+      <div>
+        <label for="ticketTypeName{{i}}">Ticket Type Name:</label>
+        <input type="text" id="ticketTypeName{{i}}" [(ngModel)]="ticketType.ticketTypeName" name="ticketTypeName{{i}}" required>
+      </div>
+
+      <div>
+        <label for="ticketPrice{{i}}">Price:</label>
+        <input type="number" id="ticketPrice{{i}}" [(ngModel)]="ticketType.price" name="ticketPrice{{i}}" required>
+      </div>
+
+      <button type="button" (click)="removeTicketType(i)" class="remove-button"><i class="fas fa-trash"></i> Remove</button>
+    </div>
+    <button type="button" (click)="addTicketType()" class="add-button"><i class="fas fa-plus"></i> Add Ticket Type</button>
+
+    <h3>Seats</h3>
+    <div *ngFor="let seat of seats; let j = index" class="form-row">
+      <div>
+        <label for="seatRow{{j}}">Seat Row:</label>
+        <input type="text" id="seatRow{{j}}" [(ngModel)]="seat.seatRow" name="seatRow{{j}}" required>
+      </div>
+
+      <div>
+        <label for="seatColumn{{j}}">Seat Column:</label>
+        <input type="number" id="seatColumn{{j}}" [(ngModel)]="seat.seatColumn" name="seatColumn{{j}}" required>
+      </div>
+
+      <div>
+        <label for="seatTicketType{{j}}">Ticket Type:</label>
+        <input type="text" id="seatTicketType{{j}}" [(ngModel)]="seat.ticketType" name="seatTicketType{{j}}" required>
+      </div>
+
+      <button type="button" (click)="removeSeat(j)" class="remove-button"><i class="fas fa-trash"></i> Remove</button>
+    </div>
+    <button type="button" (click)="addSeat()" class="add-button"><i class="fas fa-plus"></i> Add Seat</button>
+
+    <div class="text-end mt-4">
+      <button type="submit" class="btn btn-primary me-2">
+        <i class="fas fa-save"></i> Submit
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">
+        <i class="fas fa-times"></i> Cancel
+      </button>
+    </div>
+  </form>
+</div>

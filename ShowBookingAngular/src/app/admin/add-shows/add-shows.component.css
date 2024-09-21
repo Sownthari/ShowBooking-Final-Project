@@ -1,0 +1,102 @@
+/* General Container Styling */
+.add-show-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Title Styling */
+  .add-show-container h2 {
+    color: #1e3a5f; /* Dark blue for title */
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  /* Form Group Styling */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333; /* Medium blue for labels */
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc; /* Light blue border */
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #1e90ff; /* Bright blue on focus */
+    box-shadow: 0 0 3px rgba(30, 144, 255, 0.5);
+  }
+  
+  /* Icons with Labels */
+  .form-group label i {
+    margin-right: 8px;
+    color: #1e90ff; /* Bright blue icons */
+  }
+  
+  /* Action Buttons */
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .form-actions .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  
+  .form-actions .btn-primary {
+    background-color: #1e90ff; /* Bright blue button */
+    color: white;
+    border: none;
+  }
+  
+  .form-actions .btn-primary:hover {
+    background-color: #1c78d6;
+  }
+  
+  .form-actions .btn-secondary {
+    background-color: #4d79a7; /* Medium blue for cancel */
+    color: white;
+    border: none;
+  }
+  
+  .form-actions .btn-secondary:hover {
+    background-color: #3a5b84;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 576px) {
+    .add-show-container {
+      padding: 15px;
+    }
+  
+    .form-actions {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  
+    .form-actions .btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  

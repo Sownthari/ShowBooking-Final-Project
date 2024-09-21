@@ -1,0 +1,19 @@
+<ng-container *ngIf="showHeader()">
+
+    <!-- Header for Role 3 -->
+    <header *ngIf="isRole('1')">
+      <app-super-header></app-super-header>
+    </header>
+    <!-- Header for Role 2 -->
+    <header *ngIf="isRole('2')">
+      <app-header></app-header>
+    </header>
+
+    <!-- Header for Role 3 -->
+    <header *ngIf="isRole('3')">
+      <app-header-user></app-header-user>
+    </header>
+  </ng-container>
+  
+<router-outlet></router-outlet>
+  

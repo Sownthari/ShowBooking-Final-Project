@@ -1,0 +1,40 @@
+<form (ngSubmit)="onSubmit()" enctype="multipart/form-data" class="movie-form mt-4">
+  <div class="form-group">
+    <label for="movieName">Movie Name</label>
+    <input type="text" id="movieName" [(ngModel)]="movie.movieName" name="movieName" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="genre">Genre</label>
+    <input type="text" id="genre" [(ngModel)]="movie.genre" name="genre" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="language">Language</label>
+    <input type="text" id="language" [(ngModel)]="movie.language" name="language" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="duration">Duration (Minutes)</label>
+    <input type="number" id="duration" [(ngModel)]="movie.durationMinutes" name="duration" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="releaseDate">Release Date</label>
+    <input type="date" id="releaseDate" [(ngModel)]="movie.releaseDate" name="releaseDate" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" [(ngModel)]="movie.description" name="description" class="form-control"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="imageFile">Movie Image</label>
+    <input type="file" id="imageFile" (change)="onFileSelected($event)" accept="image/*" class="form-control-file">
+  </div>
+
+  <div class="button-group">
+    <button type="submit" class="btn btn-primary">Add Movie</button>
+  </div>
+</form>

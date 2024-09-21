@@ -1,0 +1,165 @@
+
+
+/* Video Section */
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.video-section img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+/* General container styles */
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Recommended Movies Section */
+h2 {
+  font-size: 1.5rem; /* Adjusted size for better readability */
+  margin-left: 15px;
+}
+
+.show-all-link {
+  font-size: 1rem; /* Smaller font for the Show All link */
+  margin-right: 15px;
+  cursor: pointer; /* Adjust spacing on the right */
+}
+
+.card {
+  margin-left: 10px; /* Ensure proper spacing for cards */
+  margin-right: 10px;
+}
+
+/* Additional Content Section */
+.additional-content {
+  margin: 30px auto; /* Centered horizontally and vertically */
+  padding: 20px 0;
+  background-color: rgb(92, 92, 92);
+  color: white;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: 600; /* Padding around content */
+}
+
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .show-all-link {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .additional-content img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1rem;
+  }
+
+  .show-all-link {
+    font-size: 0.8rem;
+  }
+
+  .card-title {
+    font-size: 0.85rem;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .video-section {
+    height: 60vh;
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .card-img-top {
+    max-height: 150px;
+  }
+  .additional-content img {
+    max-width: 100%; /* For smaller screens, allow full width */
+  }
+}
+
+@media (max-width: 576px) {
+  .video-section {
+    height: 50vh;
+  }
+
+  .card-title {
+    font-size: 0.8rem;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
+  }
+
+  .card-img-top {
+    max-height: 120px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 375px) {
+  .video-section {
+    height: 45vh;
+  }
+
+  .card-title {
+    font-size: 0.75rem;
+  }
+
+  .card-text {
+    font-size: 0.75rem;
+  }
+
+  .card-img-top {
+    max-height: 100px;
+  }
+}

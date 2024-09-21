@@ -1,0 +1,61 @@
+<div class="container mt-4">
+  <div class="row">
+    <!-- Filters for Language and Genre (1/4 of the width) -->
+    <div class="col-md-3">
+      <div class="filter-section p-3">
+        <h4>Filters</h4>
+
+        <!-- Language Filter -->
+        <div class="filter-group mb-4">
+          <div class="toggle">
+            <h5 (click)="toggleLanguageFilter()">
+              Language
+              <i [ngClass]="{'fas fa-chevron-up': showLanguageFilter, 'fas fa-chevron-down': !showLanguageFilter}"></i>
+            </h5>
+
+          </div>
+          <div *ngIf="showLanguageFilter">
+            <div *ngFor="let language of languages">
+              <input 
+                type="checkbox" 
+                [value]="language" 
+                (change)="onLanguageChange($event)"
+                [checked]="selectedLanguages.includes(language)" /> 
+              {{ language }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Genre Filter -->
+        <div class="filter-group">
+          <h5 (click)="toggleGenreFilter()">
+            Genre
+            <i [ngClass]="{'fas fa-chevron-up': showGenreFilter, 'fas fa-chevron-down': !showGenreFilter}"></i>
+          </h5>
+
+          <div *ngIf="showGenreFilter">
+            <div *ngFor="let genre of genres">
+              <input 
+                type="checkbox" 
+                [value]="genre" 
+                (change)="onGenreChange($event)"
+                [checked]="selectedGenres.includes(genre)" /> 
+              {{ genre }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Movie List (3/4 of the width) -->
+    <div class="col-md-9">
+      <h3>Movies in {{location}}</h3>
+      <div class="movie-list d-flex flex-wrap">
+        <div *ngFor="let movie of filteredMovies" class="movie-item p-2">
+          <img [src]="'assets/Images/' + movie.image" [alt]="movie.movieName" class="movie-poster shadow-sm rounded" (click)="moveMovie(movie.movieID)">
+          <p class="movie-title">{{ movie.movieName }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

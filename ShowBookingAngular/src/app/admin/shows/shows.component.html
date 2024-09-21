@@ -1,0 +1,24 @@
+<div class="theatre-shows">
+  <h2 class="text-center">Theatre Shows</h2>
+
+  <div class="date-picker-container">
+    <label for="datePicker"><i class="fas fa-calendar-alt"></i> Select Date:</label>
+    <input type="date" id="datePicker" [(ngModel)]="selectedDate" (change)="fetchShows()" />
+  </div>
+
+  <div class="text-end mb-4">
+    <button class="btn btn-primary" (click)="openAddShowModal()">
+      <i class="fas fa-plus"></i> Add New Show
+    </button>
+  </div>
+
+  <div *ngFor="let screen of shows" class="screen-container">
+    <h3 class="screen-title">{{ screen.screenName }}</h3>
+    <div class="show-cards-container">
+      <div *ngFor="let show of screen.shows" class="show-card" (click)="details(show.showID)">
+        <p><strong>Time:</strong> {{ show.showTime | date: 'shortTime' }}</p>
+        <p><strong>Movie:</strong> {{ show.movieName }}</p>
+      </div>
+    </div>
+  </div>
+</div>

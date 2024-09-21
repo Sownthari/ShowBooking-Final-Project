@@ -1,0 +1,19 @@
+.container {
+    max-width: 1200px; /* Set max width for the container */
+  }
+  
+  h2 {
+    font-size: 1.5rem; /* Adjust heading size */
+  }
+  
+  img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  p {
+    font-size: 1.2rem; /* Adjust font size for the paragraph */
+  }
+  
+  /* Additional styles can be added as needed */
+  
